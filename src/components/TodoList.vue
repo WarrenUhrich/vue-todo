@@ -9,7 +9,29 @@
 
 <script>
   export default {
-    name: 'TodoList'
+    name: 'TodoList',
+    data () {
+      return {
+        todos: [
+          {
+            task: 'Buy Milk',
+            completed: false
+          },
+          {
+            task: 'Pick up Prescription',
+            completed: false
+          },
+          {
+            task: 'Study Vue',
+            completed: false
+          },
+          {
+            task: 'Install Visual Studio Code',
+            completed: false
+          }
+        ]
+      }
+    }
   }
 </script>
 
