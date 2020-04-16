@@ -2,7 +2,7 @@
   <section>
     <h2>To-Do List</h2>
     <ul>
-      <Todo />
+      <Todo v-for="todo in todos" :key="todo.task" :task="todo.task" />
     </ul>
   </section>
 </template>

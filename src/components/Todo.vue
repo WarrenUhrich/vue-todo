@@ -1,12 +1,15 @@
 <template>
   <li>
-    A to-do!
+    {{ task }}
   </li>
 </template>
 
 <script>
   export default {
-    name: 'Todo'
+    name: 'Todo',
+    props: [
+      'task'
+    ]
   }
 </script>
 
