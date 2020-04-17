@@ -1,6 +1,7 @@
 <template>
-  <li v-if="!completed">
-    {{ task }}
+  <li v-if="!todo.completed">
+    <input type="checkbox" v-on:click="completeTodo( todo )">
+    {{ todo.task }}
   </li>
 </template>
 
@@ -8,9 +9,13 @@
   export default {
     name: 'Todo',
     props: [
-      'task',
-      'completed'
-    ]
+      'todo'
+    ],
+    methods: {
+      completeTodo ( todo ) {
+        this.$emit( 'complete-todo', todo );
+      }
+    }
   }
 </script>
 

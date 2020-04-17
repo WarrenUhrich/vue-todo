@@ -2,7 +2,7 @@
   <section>
     <h2>To-Do List</h2>
     <ul>
-      <Todo v-for="todo in todos" :key="todo.task" :task="todo.task" :completed="todo.completed" />
+      <Todo v-for="todo in todos" :key="todo.task" :todo="todo" v-on:complete-todo="completeTodo" />
     </ul>
   </section>
 </template>
@@ -35,6 +35,12 @@
             completed: false
           }
         ]
+      }
+    },
+    methods: {
+      completeTodo ( todo ) {
+        const todoIndex = this.todos.indexOf( todo );
+        this.todos[todoIndex].completed = true;
       }
     }
   }
