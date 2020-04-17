@@ -1,6 +1,13 @@
 <template>
   <section>
     <h2>To-Do List</h2>
+    <form>
+      <label for="new-todo">
+        Add a New To-Do:
+        <input type="text" name="new-todo" v-model="newTodo">
+      </label>
+      <input type="submit" value="Submit">
+    </form>
     <ul>
       <Todo v-for="todo in todos" :key="todo.task" :todo="todo" v-on:complete-todo="completeTodo" />
     </ul>
@@ -17,6 +24,7 @@
     },
     data () {
       return {
+        newTodo: '',
         todos: [
           {
             task: 'Buy Milk',
