@@ -1,5 +1,5 @@
 <template>
-  <li>
+  <li v-if="!completed">
     {{ task }}
   </li>
 </template>
@@ -8,7 +8,8 @@
   export default {
     name: 'Todo',
     props: [
-      'task'
+      'task',
+      'completed'
     ]
   }
 </script>

@@ -2,7 +2,7 @@
   <section>
     <h2>To-Do List</h2>
     <ul>
-      <Todo v-for="todo in todos" :key="todo.task" :task="todo.task" />
+      <Todo v-for="todo in todos" :key="todo.task" :task="todo.task" :completed="todo.completed" />
     </ul>
   </section>
 </template>
@@ -24,7 +24,7 @@
           },
           {
             task: 'Pick up Prescription',
-            completed: false
+            completed: true
           },
           {
             task: 'Study Vue',
