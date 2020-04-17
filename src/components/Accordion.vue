@@ -1,8 +1,10 @@
 <template>
   <article class="accordion" :class="{ 'accordion-hide': hide }">
-    <h2 @click="toggleHide()">My Accordion</h2>
+    <h2 @click="toggleHide()">
+      {{ title }}
+    </h2>
     <p>
-      I'm text that will hide and show! Click the title to toggle my visibility. :)
+      {{ content }}
     </p>
   </article>
 </template>
@@ -10,6 +12,10 @@
 <script>
   export default {
     name: 'Accordion',
+    props: [
+      'title',
+      'content'
+    ],
     data () {
       return {
         hide: true

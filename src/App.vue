@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <h1>Vue Day 2</h1>
-    <Accordion />
+    <Accordion title="Click Here To Expand" content="Hello, World! I hide and show based on Vue class binding!" />
+    <Accordion title="What Is Vue?" content="A popular JavaScript library, used for creating dynamic and reactive webpages!" />
     <TodoList />
   </div>
 </template>
