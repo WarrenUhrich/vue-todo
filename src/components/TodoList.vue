@@ -1,7 +1,7 @@
 <template>
   <section>
     <h2>To-Do List</h2>
-    <form>
+    <form @submit="addTodo">
       <label for="new-todo">
         Add a New To-Do:
         <input type="text" name="new-todo" v-model="newTodo">
@@ -49,6 +49,15 @@
       completeTodo ( todo ) {
         const todoIndex = this.todos.indexOf( todo );
         this.todos[todoIndex].completed = true;
+      },
+      addTodo ( event ) {
+        event.preventDefault(); // Stop the form from refreshing the page!!!
+        const newTodo = this.newTodo;
+        this.todos.push( {
+          task: newTodo,
+          completed: false
+        } );
+        this.newTodo = ''; // Clear the value after adding, so it is easy for the user to add more!
       }
     }
   }
